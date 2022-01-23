@@ -19,7 +19,7 @@ def highest_bidder(bids):
   print(f"{winner} is the winner with a bid of {highest_bid} dollars.")  
 
 while auction_over == False:
-  name = input("What is your name? ")
+  name = input("What is your name? ").lower()
   bid_price = int(input("How much do you wanna bid? $"))
   all_bidders[name] = bid_price
 
