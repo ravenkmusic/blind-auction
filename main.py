@@ -5,17 +5,18 @@ from art import logo
 
 print(logo)
 
-auction_over = False
-
 all_bidders = {}
-
-highest_bidder = 0
-
-def highest_bidder():
-  for bid in all_bidders:
-    if bid > highest_bidder:
-      bid = highest_bidder
-      print(f"{name} is the highest bidder! You win!")
+auction_over = False
+  
+def highest_bidder(bids):
+  highest_bid = 0
+  winner = ""
+  for bidder in bids:
+    bid_amount = bids[bidder]
+    if bid_amount > highest_bid:
+      highest_bid = bid_amount
+      winner = bidder
+  print(f"{winner} is the winner with a bid of {highest_bid}")  
 
 while auction_over == False:
   name = input("What is your name? ")
@@ -26,6 +27,6 @@ while auction_over == False:
   
   if more_bidders == "no":
     auction_over = True
+    highest_bidder(all_bidders)
   elif more_bidders == "yes":
     clear()
-    highest_bidder()
