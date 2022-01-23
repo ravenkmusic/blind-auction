@@ -5,27 +5,25 @@ from art import logo
 
 print(logo)
 
-name = input("What is your name? ")
-bid_price = input("How much do you wanna bid? $")
-other_bidder = input("Are there other users who would like to bid? Enter yes or no.")
+other_bidder = True
 
-all_bidders = []
+while other_bidder:
+  name = input("What is your name? ")
+  bid_price = input("How much do you wanna bid? $")
 
-def add_bidders_info(bidder, price):
-  bidders_info = {}
-  bidders_info["name"] = bidder
-  bidders_info["bid"] = price
+  all_bidders = []
+
+  def add_bidders_info(bidder, price):
+    bidders_info = {}
+    bidders_info["name"] = bidder
+    bidders_info["bid"] = price
+    
+    all_bidders.append(bidders_info)
+
+  add_bidders_info(name, bid_price)
+
+  more_bidders = input("Are there other users who would like to bid? Enter yes or no. ")
   
-  all_bidders.append(bidders_info)
-
-add_bidders_info(name, bid_price)
-
-def find_highest_bid():
-
-
-def other_bidders():
-  if other_bidder == yes:
-    clear()
-    add_bidders_info()
-  else:
-    find_highest_bid()
+  if more_bidders == "no":
+    other_bidder = False
+    
