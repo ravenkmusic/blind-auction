@@ -20,7 +20,7 @@ def highest_bidder(bids):
 
 while auction_over == False:
   name = input("What is your name? ")
-  bid_price = input("How much do you wanna bid? $")
+  bid_price = int(input("How much do you wanna bid? $"))
   all_bidders[name] = bid_price
 
   more_bidders = input("Are there other users who would like to bid? Enter yes or no. ")
