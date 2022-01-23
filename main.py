@@ -21,10 +21,11 @@ def add_bidders_info(bidder, price):
 add_bidders_info(name, bid_price)
 
 def find_highest_bid():
-  
 
-def others_bidders():
+
+def other_bidders():
   if other_bidder == yes:
     clear()
+    add_bidders_info()
   else:
     find_highest_bid()
