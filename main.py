@@ -5,25 +5,17 @@ from art import logo
 
 print(logo)
 
-other_bidder = True
+auction_over = False
 
-while other_bidder:
+all_bidders = {}
+
+while auction_over == False:
   name = input("What is your name? ")
   bid_price = input("How much do you wanna bid? $")
-
-  all_bidders = []
-
-  def add_bidders_info(bidder, price):
-    bidders_info = {}
-    bidders_info["name"] = bidder
-    bidders_info["bid"] = price
-    
-    all_bidders.append(bidders_info)
-
-  add_bidders_info(name, bid_price)
+  all_bidders[name] = bid_price
 
   more_bidders = input("Are there other users who would like to bid? Enter yes or no. ")
   
   if more_bidders == "no":
-    other_bidder = False
-    
+    auction_over = True
+  print(all_bidders)
